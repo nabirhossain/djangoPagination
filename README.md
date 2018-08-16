@@ -4,4 +4,4 @@ https://djangosnippets.org/snippets/2199/
 
 https://code.i-harness.com/en/q/571e9c
 
-https://github.com/codingforentrepreneurs/Guides/blob/master/all/Heroku_Django_Deployment_Guide.md
+Django Deployment Guide: https://github.com/codingforentrepreneurs/Guides/blob/master/all/Heroku_Django_Deployment_Guide.md
