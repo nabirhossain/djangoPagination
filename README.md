@@ -18,4 +18,4 @@ https://code.i-harness.com/en/q/571e9c
 
 >[Django Virtual env setup](https://syscoding.com/tutorials/44/how-to-setup-python-virtualenv-on-ubuntu-1710/)
 >
-![Alt text](/path/to/img.jpg "Optional title")
+[Github markdown syntex](https://daringfireball.net/projects/markdown/syntax)
