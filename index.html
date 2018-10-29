@@ -1,85 +1,33 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block title %} NFC  ব্লগে আপনাকে স্বাগতম {% endblock %}
+{% block title %} django pagination {% endblock %}
 
 {% block content %}
 
 <div class="container">
-      <div class="row" style="margin-top: 80px;">
+      <div class="row">
         <div class="col-md-8">
             {% for p in items %}
           <div class="card mb-4">
-            <a href="{% url 'nfc:post_detail' id=p.id %}">
+            <a href="#">
             <img class="card-img-top" src="{{ p.post_image.url }}" alt="Card image cap" height="300px" width="300px">
             </a>
             <div class="card-body">
-              <h2 class="card-title"><a href="{% url 'nfc:post_detail' id=p.id %}">{{ p.post_title }}</a></h2>
-               <a href="{% url 'nfc:category' name=p.post_category.name %}">category: {{ p.post_category.name }}</a>
+              <h2 class="card-title"><a href="#">{{ p.post_title }}</a></h2>
+               <a href="#">category: {{ p.post_category.name }}</a>
               <p class="card-text">{{ p.post_body|truncatewords:25|safe }}</p>
-              <a href="{% url 'nfc:post_detail' id=p.id %}" class="btn btn-primary">Read More &rarr;</a>
+              <a href="#" class="btn btn-primary">Read More &rarr;</a>
             </div>
-            <div class="card-footer text-muted"> Posted on:
-                {{ p.posted_on }}
-                ||  Posted By:
-              <a href="{% url 'nfc:author' name=p.post_author %}">{{ p.post_author.auth_name }}</a>
+            <div class="card-footer text-muted"> Posted on:{{ p.posted_on }} ||  Posted By:
+              <a href="#">{{ p.post_author.auth_name }}</a>
             </div>
           </div>
             {% endfor %}
           <!-- Pagination -->
+	   {% include "pagination.html" %}
         </div>
-        <!-- Sidebar Widgets Column -->
-        <div class="col-md-4">
-          <!-- Search Widget -->
-          <div class="card my-4">
-            <h5 class="card-header">Search</h5>
-            <div class="card-body">
-              <form action="" method="GET">
-					<div class="form-group">
-						<input type="text" name="q" class="form-control" placeholder="Type a keyword" value="{{ request.GET.q }}">
-					</div>
-				</form>
-            </div>
-          </div>
-
-          <!-- Side Widget -->
-          <div class="card my-4">
-            <h5 class="card-header"> সর্বশেষ প্রকাশিত পোষ্ট</h5>
-              <div class="card-body">
-                <ul class="list-unstyled mb-0">
-					  {% for r in recent %}
-                  <li>
-                      <a href="{% url 'nfc:post_detail' id=r.id %}">{{ r.post_title }} <span class="badge badge-pill badge-light">views: {{ r.views }}</span> </a>  <hr>
-                  </li>
-					  {% endfor %}
-                </ul>
-            </div>
-          </div>
-
-          <!-- Categories Widget -->
-          <div class="card my-4">
-            <h5 class="card-header">Post Categories</h5>
-            <div class="card-body">
-                  <ul class="list-unstyled mb-0">
-                    {% for c in cat %}
-                    <li>
-                      <a href="{% url 'nfc:category' name=c.name %}"> {{ c.name }} <span class="badge badge-pill badge-link">{{ c.num_post }} posts</span> </a>  <hr>
-                    </li>
-                    {% endfor %}
-                  </ul>
-            </div>
-          </div>
-        </div>
-        {% include "pagination.html" %}
-      </div>
-      <!-- /.row -->
-    </div>
+       
 {% endblock %}
 {% block script %}
 
 {% endblock %}
-
-
-
-<!--
-https://drumcoder.co.uk/blog/2010/jun/13/monthly-calendar-django/
--->
