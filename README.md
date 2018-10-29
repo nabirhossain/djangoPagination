@@ -6,7 +6,7 @@
 
   Problem 2.The implementation does not handle query pagination properly. For example, if I search for 23rd page of all objects that contain the title = “Django”, the redirect should be to “someview.html?title=Django&page=23”, not “someview.html?page=23”.
 >
-I created django pagination properly for many pages following this tutorial.
+### I solved this django pagination properly for many pages following this tutorial.
 
 [Medium Tutorial](https://medium.com/@sumitlni/paginate-properly-please-93e7ca776432)
 
