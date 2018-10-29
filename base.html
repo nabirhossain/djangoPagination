@@ -12,115 +12,10 @@
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<style>
-.card-profile {
-  background-color: #e6e5e1;
-  border-radius: 0;
-  border: 0;
-}
-.card-profile .card-img-top {
-  border-radius: 0;
-}
-.card-profile .card-img-profile {
-  max-width: 100%;
-  border-radius: 50%;
-  margin-top: -40px;
-  margin-bottom: 35px;
-  border: 5px solid #e6e5e1;
-}
-.card-profile .card-title {
-  margin-bottom: 50px;
-}
-.card-profile .card-title small {
-  display: block;
-  font-size: .6em;
-  margin-top: .2em;
-}
-.card-profile .card-links {
-  margin-bottom: 25px;
-}
-.card-profile .card-links .fa {
-  margin: 0 1em;
-  font-size: 1.6em;
-}
-.card-profile .card-links .fa:focus, .card-profile .card-links .fa:hover {
-  text-decoration: none;
-}
-.card-profile .card-links .fa.fa-dribbble {
-  color: #ea4b89;
-  font-weight: bold;
-}
-.card-profile .card-links .fa.fa-dribbble:hover {
-  color: #e51d6b;
-}
-.card-profile .card-links .fa.fa-twitter {
-  color: #68aade;
-}
-.card-profile .card-links .fa.fa-twitter:hover {
-  color: #3e92d5;
-}
-.card-profile .card-links .fa.fa-facebook {
-  color: #3b5999;
-}
-.card-profile .card-links .fa.fa-facebook:hover {
-  color: #2d4474;
-}
-</style>
-<style type="text/css">
-    .social:hover {
-     -webkit-transform: scale(1.1);
-     -moz-transform: scale(1.1);
-     -o-transform: scale(1.1);
- }
- .social {
-     -webkit-transform: scale(0.8);
-     /* Browser Variations: */
-
-     -moz-transform: scale(0.8);
-     -o-transform: scale(0.8);
-     -webkit-transition-duration: 0.5s;
-     -moz-transition-duration: 0.5s;
-     -o-transition-duration: 0.5s;
- }
-
-/*
-    Multicoloured Hover Variations
-*/
-#social-fb {
-     text-align: center;
-     float: center;
- }
- #social-fb:hover {
-     color: #3B5998;
- }
- #social-in:hover {
-     color: #0077b5;
- }
- #social-tw:hover {
-     color: #4099FF;
- }
- #social-gp:hover {
-     color: #d34836;
- }
- #social-em:hover {
-     color: #f39c12;
- }
-</style>
   </head>
   <body>
-  <div id="fb-root"></div>
-<script>
-(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.1&appId=1288611347936727&autoLogAppEvents=1';
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));
-</script>
-
    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-       <a class="navbar-brand" href="{% url 'nfc:index' %}">
+       <a class="navbar-brand" href="#">
            <img src="{% static 'img/nfc_logo.jpg' %}" alt="Logo" style="width:45px;">
        </a>
        <p class="text-light"> আর্ত মানবতার সেবায় আমরা</p>
@@ -130,43 +25,20 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="{% url 'nfc:index' %}">Home
+              <a class="nav-link" href="#">Home
                 <span class="sr-only">(current)</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'nfc:about' %}">About</a>
+              <a class="nav-link" href="#">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'nfc:activity' %}">Activities</a>
+              <a class="nav-link" href="#">Activities</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'contact:contact' %}">Contact</a>
+              <a class="nav-link" href="#">Contact</a>
             </li>
-            {% if request.user.is_authenticated %}
-			<li class="nav-item">
-                <a class="nav-link" href="{% url 'nfc:profile' %}">
-                    <img src="{% static 'img/user.svg' %}" alt="Logo" width="34" height="30">
-                </a>
-            </li>
-			<li class="nav-item">
-                <a class="nav-link" href="{% url 'nfc:logout' %}">
-                    <img src="{% static 'img/exit.svg' %}" alt="Logo" width="34" height="30">
-                </a>
-            </li>
-			    {% else %}
-            <li class="nav-item">
-                <a class="nav-link" href="{% url 'nfc:login' %}">
-                    <img src="{% static 'img/login.svg' %}" alt="Logo" width="34" height="30">
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{% url 'nfc:register' %}">
-                    <img src="{% static 'img/user(3).svg' %}" alt="Logo" width="34" height="30">
-                </a>
-            </li>
-			{% endif %}
-          </ul>
+            </ul>
         </div>
     </nav>
 
@@ -181,13 +53,6 @@
     <footer class="py-3 bg-dark">
       <div class="container">
         <p class="m-0 text-center text-white">Copyright &copy; Narayangonj Friends Club || All rights reserved 2018 || Designed by  <a href="https://nobinprofile.herokuapp.com/">Talukder Nobin</a> </p>
-        <p class="m-0 text-center text-info">
-          <a href="https://www.facebook.com/groups/nfc.2011/"><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>
-          <a href="https://www.linkedin.com/in/nabir-hossain-a72249106/"><i id="social-in" class="fa fa-linkedin-square fa-3x social"></i></a>
-          <a href="https://twitter.com/MdNabirHossain3"><i id="social-tw" class="fa fa-twitter-square fa-3x social"></i></a>
-          <a href="https://plus.google.com/u/0/116561509278696653736"><i id="social-gp" class="fa fa-google-plus-square fa-3x social"></i></a>
-          <a href="mailto:nabirhossain13@gmail.com"><i id="social-em" class="fa fa-envelope-square fa-3x social"></i></a>
-        </p>
       </div>
     </footer>
 
@@ -199,15 +64,3 @@
   </body>
 </html>
 
-
-<!--
-<svg aria-hidden="true" width="34" height="30" data-prefix="fas" data-icon="user-circle" class="svg-inline--fa fa-user-circle fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm0 96c48.6 0 88 39.4 88 88s-39.4 88-88 88-88-39.4-88-88 39.4-88 88-88zm0 344c-58.7 0-111.3-26.6-146.5-68.2 18.8-35.4 55.6-59.8 98.5-59.8 2.4 0 4.8.4 7.1 1.1 13 4.2 26.6 6.9 40.9 6.9 14.3 0 28-2.7 40.9-6.9 2.3-.7 4.7-1.1 7.1-1.1 42.9 0 79.7 24.4 98.5 59.8C359.3 421.4 306.7 448 248 448z"></path></svg>
-<svg xmlns="http://www.w3.org/2000/svg" width="34" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-log-out"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
-<svg xmlns="http://www.w3.org/2000/svg" width="34" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-log-in"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path><polyline points="10 17 15 12 10 7"></polyline><line x1="15" y1="12" x2="3" y2="12"></line></svg>
-
-<a href="https://www.facebook.com/bootsnipp"><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>
-                <a href="https://twitter.com/bootsnipp"><i id="social-tw" class="fa fa-twitter-square fa-3x social"></i></a>
-                <a href="https://plus.google.com/+Bootsnipp-page"><i id="social-gp" class="fa fa-google-plus-square fa-3x social"></i></a>
-                <a href="mailto:bootsnipp@gmail.com"><i id="social-em" class="fa fa-envelope-square fa-3x social"></i></a>
-
--->
